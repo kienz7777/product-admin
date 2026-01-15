@@ -199,7 +199,7 @@ It demonstrates readiness for:
 
 ---
 
-### 🐳 Run Frontend with Docker
+## 🐳 Run Frontend with Docker
 
 ```bash
 docker compose up --build
@@ -211,13 +211,49 @@ It connects to the backend via:
 
 ---
 
-## 📌 Conclusion
+## 🔮 Propose the Future Improvements
 
-This admin panel is designed as a realistic foundation for an **e-commerce back-office system**.
+Although this project already demonstrates a production-grade front-end architecture, it is intentionally scoped for an assessment. In a real-world system, the following improvements would be natural next steps:
 
-It focuses on:
+### 1. Authentication & Authorization
 
-- Maintainability  
-- Scalability  
-- Correctness under concurrency  
-- Clean archit
+- Integrate JWT-based authentication
+- Role-based UI rendering (Admin / Editor / Viewer)
+- Protected routes using route guards
+- Token refresh & session persistence
+
+This aligns with how real admin systems restrict access to sensitive operations such as product deletion or stock updates.
+
+### 2. Advanced Form Handling
+
+- Introduce `react-hook-form` + schema validation (Zod/Yup)
+- Field-level validation messages
+- Better UX for complex forms (variants, attributes, categories)
+
+This reduces boilerplate and improves correctness for large-scale forms.
+
+### 3. Improved Search & Filtering
+
+- Integrate with backend search (Elasticsearch / OpenSearch)
+- Client-side filters:
+  - Category
+  - Price range
+  - Status
+- Debounced search input
+
+This would allow the admin panel to scale to thousands of products without degrading usability.
+
+### 4. Observability & Monitoring
+
+- Centralized error tracking (Sentry)
+- Performance monitoring (Web Vitals)
+- Structured logging for user actions
+
+These features are essential in production admin tools to detect issues early.
+
+### 7. Resilience Enhancements
+
+- Optimistic UI updates
+- Retry strategies for failed mutations
+
+This improves reliability in unstable network environments.
